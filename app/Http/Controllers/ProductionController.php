@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Production;
+use App\Services\ProductionService;
 use Illuminate\Http\Request;
 
 class ProductionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $productionService;
+
+    function __construct(ProductionService $productionService)
+    {
+        $this->productionService = $productionService;
+    }
+
     public function index()
     {
-        //
+        $production = $this->productionService->index();
+        return ['12312'];
     }
 
     /**
@@ -28,7 +34,8 @@ class ProductionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
     }
 
     /**
