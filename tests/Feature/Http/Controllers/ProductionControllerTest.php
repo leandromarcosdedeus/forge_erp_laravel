@@ -16,10 +16,10 @@ class ProductionControllerTest extends TestCase
         $production = New Production;
         $production->name = fake('pt_BR')->name();
         //$production->controller = fake('pt_BR')->text(255);
-        $production->price = fake()->randomFloat(2, 0, 1000);
+        $production->price = fake()->randomFloat(2, 0, 10000);
         $production->quantity = rand(0, 2000);
         $response = $this->post("api/production", $production->toArray());
-        $response->assertStatus(202);
+        $response->assertStatus(201);
     }
 
 }

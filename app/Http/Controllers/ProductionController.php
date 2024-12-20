@@ -17,8 +17,7 @@ class ProductionController extends Controller
 
     public function index()
     {
-        $production = $this->productionService->index();
-        return ['12312'];
+        return $this->productionService->index();
     }
 
     /**
