@@ -34,7 +34,7 @@ class ProductionController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        return $this->productionService->store($request->all());
 
     }
 
